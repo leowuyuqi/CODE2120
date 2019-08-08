@@ -22,7 +22,7 @@ def example_get(request, var_a, var_b):
 
 @csrf_exempt
 def fib(request):
-	jsob = {"startNumber":0,"length":10}
+	jsob={'n1':0,'n2':0}
 	log = []
 	if request.method == "POST":
 		try:
@@ -30,25 +30,10 @@ def fib(request):
 			received = json.loads(data)
 			jsob.update(received)
 
-
-
-			startNumber = int(jsob["startNumber"])
-			length      = int(jsob["length"])
-			loop        = range(length)
-
-			numarray    = []
-
-			fibno = startNumber
-			addno = 1
-
-			for l in loop:
-				numarray.append(fibno)
-				fibno = fibno+addno
-				addno = fibno-addno
-
-			
-
-			return JsonResponse({"fib":numarray})
+ 
+			x = int(jsob['n1'])+int(jsob['n2'])
+			result = {'sum':x}
+			return JsonResponse(result)
 		
 		except Exception as e:
 			exc_type, exc_obj, exc_tb = sys.exc_info()

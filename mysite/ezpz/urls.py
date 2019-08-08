@@ -3,6 +3,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-	#path(r'example_get/<str:var_a>/<int:var_b>',  views.example_get),
-	#path(r'example_post/', views.example_post),
+    path(r'ezpz_get/<str:var_a>/<str:var_b>',  views.ezpz_get),
+	path(r'caculate/', views.caculate),
 ]
